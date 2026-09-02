@@ -1,4 +1,5 @@
 import image from "../../assets/img1.png";
+import Image from "next/image";
 
 const FirstPart = () => {
   return (
@@ -19,7 +20,11 @@ const FirstPart = () => {
       </div>
 
       <div className="flex justify-center items-center">
-        <img src={image} alt="Farina Riaz" className="w-[70%] h-[70%]" />
+        <Image
+          src={image}
+          alt="Farina Riaz"
+          className="w-[70%] h-[70%]"
+        />
       </div>
     </div>
   );
