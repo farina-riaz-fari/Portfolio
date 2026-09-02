@@ -1,7 +1,7 @@
 import image from "../../assets/img1.png";
 import Image from "next/image";
 
-const FirstPart = () => {
+const Hero = () => {
   return (
     <div className="grid grid-cols-2 p-12 h-screen">
       <div className="flex flex-col justify-center items-center gap-4">
@@ -30,4 +30,4 @@ const FirstPart = () => {
   );
 };
 
-export default FirstPart;
+export default Hero;
