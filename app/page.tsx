@@ -1,5 +1,5 @@
 import Navbar from "../src/components/Navbar";
-import FirstPart from "../src/old-pages/FirstPart";
+import Hero from "../src/components/Hero";
 import SecondPart from "../src/old-pages/SecondPart";
 import ThirdPart from "../src/old-pages/ThirdPart";
 import FourthPart from "../src/old-pages/FourthPart";
@@ -10,7 +10,7 @@ export default function Home() {
       <Navbar />
 
       <div id="home">
-        <FirstPart />
+        <Hero />
       </div>
 
       <div id="about">
