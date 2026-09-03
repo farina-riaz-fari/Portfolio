@@ -1,29 +1,11 @@
-import Navbar from "../src/components/Navbar";
-import Hero from "../src/components/Hero";
-import About from "../src/components/About";
-import Projects from "../src/components/Projects";
-import Contact from "../src/components/Contact";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-r from-fuchsia-100 to-purple-100 scroll-smooth">
+    <main className="min-h-screen bg-black text-white">
       <Navbar />
-
-      <div id="home">
-        <Hero />
-      </div>
-
-      <div id="about">
-        <About />
-      </div>
-
-      <div id="work">
-        <Projects />
-      </div>
-
-      <div id="contact">
-        <Contact />
-      </div>
-    </div>
+      <Hero />
+    </main>
   );
 }
