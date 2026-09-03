@@ -1,8 +1,8 @@
 import Navbar from "../src/components/Navbar";
 import Hero from "../src/components/Hero";
-import SecondPart from "../src/old-pages/SecondPart";
-import ThirdPart from "../src/old-pages/ThirdPart";
-import FourthPart from "../src/old-pages/FourthPart";
+import About from "../src/components/About";
+import Projects from "../src/components/Projects";
+import Contact from "../src/components/Contact";
 
 export default function Home() {
   return (
@@ -14,15 +14,15 @@ export default function Home() {
       </div>
 
       <div id="about">
-        <SecondPart />
+        <About />
       </div>
 
       <div id="work">
-        <ThirdPart />
+        <Projects />
       </div>
 
       <div id="contact">
-        <FourthPart />
+        <Contact />
       </div>
     </div>
   );
