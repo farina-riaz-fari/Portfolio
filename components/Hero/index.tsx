@@ -13,8 +13,14 @@ const Hero = () => {
           Hi, I&apos;m Farina Riaz
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-          Frontend Developer specializing in React, React Native, TypeScript, and JavaScript. I build responsive, user-focused web and mobile applications with clean, maintainable code and modern UI.
+        <h2 className="mt-4 text-xl font-medium text-gray-300 md:text-2xl">
+          React & React Native Developer
+        </h2>
+
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-gray-400 md:text-lg">
+          I&apos;m a frontend developer specializing in React, React Native,
+          TypeScript, and JavaScript. I build responsive, user-focused web and
+          mobile applications with clean, maintainable code and modern UI.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
