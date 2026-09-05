@@ -33,8 +33,8 @@ const Projects = () => {
           My Work
         </p>
 
-        <h2 className="mb-12 text-4xl font-bold md:text-5xl">
-          Projects
+        <h2 className="mb-14 text-4xl font-bold md:text-5xl">
+          Featured Projects
         </h2>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
