@@ -26,9 +26,9 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-black px-6 py-24 text-white"
+      className="bg-black px-6 py-20 text-white md:px-10"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1400px]">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-gray-400">
           My Work
         </p>
