@@ -4,7 +4,7 @@ const Experience = () => {
       id="experience"
       className="min-h-screen bg-black px-6 py-24 text-white"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <p className="mb-3 text-sm uppercase tracking-[0.3em] text-gray-400">
           My Journey
         </p>
