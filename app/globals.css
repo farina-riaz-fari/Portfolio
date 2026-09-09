@@ -1,1 +1,66 @@
 @import "tailwindcss";
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes hero-float-slow {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(20px, -15px);
+  }
+}
+
+@keyframes hero-float-reverse {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-15px, 12px);
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: hero-fade-up 0.9s ease-out both;
+}
+
+.hero-image {
+  animation: hero-float 5s ease-in-out infinite;
+}
+
+.hero-image > div:first-child {
+  animation: hero-float-slow 8s ease-in-out infinite;
+}
+
+.hero-image > div:nth-last-child(2) {
+  animation: hero-float-reverse 6s ease-in-out infinite;
+}
+
+.hero-image > div:last-child {
+  animation: hero-float-slow 7s ease-in-out infinite;
+}
