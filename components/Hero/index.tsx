@@ -10,16 +10,28 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-black px-6 pt-24 text-white md:px-10"
+      className="relative flex min-h-screen items-center overflow-hidden bg-zinc-950 px-6 pt-24 text-white md:px-10"
     >
-      {/* Background glow */}
-      <div className="pointer-events-none absolute left-1/4 top-1/3 h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[120px]" />
+      {/* BACKGROUND DIAMONDS */}
 
-      <div className="pointer-events-none absolute right-0 top-1/4 h-[450px] w-[450px] rounded-full bg-blue-600/10 blur-[120px]" />
+      {/* Top-left purple diamond */}
+      <div className="pointer-events-none absolute left-10 top-24 z-0 h-70 w-70 rotate-45 bg-purple-600/5 blur-3xl" />
 
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-[300px] w-[400px] rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute left-10 top-24 z-0 h-70 w-70 rotate-45 border border-purple-400/15" />
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      {/* Center blue diamond */}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-blue-500/5 blur-3xl" />
+
+      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rotate-45 border border-blue-400/10" />
+
+      {/* Bottom-right cyan diamond */}
+      <div className="pointer-events-none absolute bottom-10 right-10 z-0 h-76 w-76 rotate-45 bg-cyan-500/5 blur-3xl" />
+
+      <div className="pointer-events-none absolute bottom-10 right-10 z-0 h-76 w-76 rotate-45 border border-cyan-400/15" />
+
+      {/* MAIN CONTENT */}
+
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         {/* LEFT */}
         <div className="hero-content">
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2">
@@ -49,7 +61,6 @@ const Hero = () => {
             and developing user-focused interfaces.
           </p>
 
-          {/* Buttons */}
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
               href="#projects"
@@ -71,7 +82,6 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Technologies */}
           <div className="mt-10 flex flex-wrap gap-3">
             {[
               "React",
@@ -92,14 +102,11 @@ const Hero = () => {
 
         {/* RIGHT - IMAGE */}
         <div className="relative flex justify-center lg:justify-end">
-          {/* Image glow */}
           <div className="absolute h-[350px] w-[350px] rounded-full bg-gradient-to-r from-purple-600/30 via-blue-500/20 to-cyan-400/20 blur-[80px]" />
 
           <div className="hero-image relative">
-            {/* Gradient border */}
             <div className="absolute -inset-[2px] rounded-[2rem] bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 opacity-70" />
 
-            {/* Image card */}
             <div className="relative h-[390px] w-[320px] overflow-hidden rounded-[2rem] border border-white/10 bg-gray-900 md:h-[450px] md:w-[370px]">
               <Image
                 src="/images/profile.png"
@@ -113,7 +120,6 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
 
-            {/* React card */}
             <div className="absolute -left-8 top-12 hidden items-center gap-3 rounded-2xl border border-white/10 bg-black/80 px-4 py-3 backdrop-blur-md md:flex">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-500/15 text-purple-300">
                 <FontAwesomeIcon icon={faCode} className="h-4 w-4" />
@@ -121,13 +127,13 @@ const Hero = () => {
 
               <div>
                 <p className="text-xs text-gray-500">Specialized in</p>
+
                 <p className="text-sm font-medium text-white">
                   React & TypeScript
                 </p>
               </div>
             </div>
 
-            {/* Mobile card */}
             <div className="absolute -bottom-6 -right-6 hidden items-center gap-3 rounded-2xl border border-white/10 bg-black/80 px-4 py-3 backdrop-blur-md md:flex">
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-300">
                 <FontAwesomeIcon
@@ -138,6 +144,7 @@ const Hero = () => {
 
               <div>
                 <p className="text-xs text-gray-500">Building for</p>
+
                 <p className="text-sm font-medium text-white">
                   Web & Mobile
                 </p>
