@@ -88,27 +88,23 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-black px-6 py-24 text-white md:px-10 md:py-32"
-    >
-      {/* Background glows */}
-      <div className="pointer-events-none absolute -left-40 top-40 h-96 w-96 rounded-full bg-purple-600/10 blur-[130px]" />
-      <div className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-cyan-500/10 blur-[130px]" />
-
+className="relative overflow-hidden px-6 py-24 text-white md:px-10 md:py-32
+bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.07),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.06),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(34,211,238,0.05),transparent_45%),linear-gradient(135deg,#17151f,#151721,#131722)]"    >
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mb-16 max-w-3xl">
-          <p className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-cyan-400">
+          <p className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
             Selected Work
           </p>
 
           <h2 className="text-4xl font-bold tracking-tight md:text-6xl">
             Featured{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-blue-100/70">
             A selection of web and mobile applications I&apos;ve worked on,
             focusing on clean interfaces, practical functionality, and
             user-focused experiences.
