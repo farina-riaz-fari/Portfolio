@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const About = () => {
   const technologies = [
     "React",
@@ -9,6 +13,32 @@ const About = () => {
     "Redux",
     "Git",
   ];
+
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const card = cardRef.current;
+
+    if (!card) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(card);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -76,7 +106,14 @@ const About = () => {
           </div>
 
           {/* Right stack card */}
-          <div className="group relative rounded-3xl border border-white/[0.08] bg-black/60 p-8 backdrop-blur-xl transition duration-500 hover:border-purple-500/30 md:p-10">
+          <div
+            ref={cardRef}
+            className={`group relative rounded-3xl border border-white/[0.08] bg-black/60 p-8 backdrop-blur-xl transition-all duration-1000 ease-out hover:border-purple-500/30 md:p-10 ${
+              isVisible
+                ? "translate-x-0 opacity-100"
+                : "translate-x-24 opacity-0"
+            }`}
+          >
             {/* Card glow */}
             <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-purple-500/10 blur-3xl transition duration-500 group-hover:bg-purple-500/20" />
 

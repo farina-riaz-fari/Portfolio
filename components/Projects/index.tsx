@@ -88,8 +88,8 @@ const Projects = () => {
   return (
     <section
       id="projects"
-className="relative overflow-hidden px-6 py-24 text-white md:px-10 md:py-32
-bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.07),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.06),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(34,211,238,0.05),transparent_45%),linear-gradient(135deg,#17151f,#151721,#131722)]"    >
+      className="relative overflow-hidden px-6 py-24 text-white md:px-10 md:py-32
+      bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.07),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.06),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(34,211,238,0.05),transparent_45%),linear-gradient(135deg,#17151f,#151721,#131722)]"    >
       <div className="relative mx-auto max-w-7xl">
         {/* Heading */}
         <div className="mb-16 max-w-3xl">
