@@ -69,9 +69,7 @@ const Experience = () => {
       id="experience"
       className="relative overflow-hidden bg-zinc-950 px-6 py-24 text-white md:px-10 md:py-32"
     >
-      {/* ============================= */}
       {/* BACKGROUND */}
-      {/* ============================= */}
 
       <div className="pointer-events-none absolute inset-0">
         {/* Large ghosted title */}
@@ -104,9 +102,7 @@ const Experience = () => {
         />
       </div>
 
-      {/* ============================= */}
       {/* CONTENT */}
-      {/* ============================= */}
 
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
