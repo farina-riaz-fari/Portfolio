@@ -74,13 +74,17 @@ const projects = [
   {
     title: "Rentaround",
     description:
-      "A React Native mobile application with separate buyer, seller, and admin workflows. Contributed to the development of the buyer-side application.",
+      "A React Native rental application with separate buyer, seller, and admin workflows. Contributed to the development of the buyer-side application.",
     technologies: ["React Native", "JavaScript"],
     type: "Mobile App",
     icon: faMobileScreenButton,
     gradient: "from-blue-500/25 via-purple-500/15 to-cyan-500/10",
     iconStyle: "bg-blue-500/15 text-blue-300",
-    images: [],
+    images: [
+      "/projects/rentaround/rentArroundHome.png",
+      "/projects/rentaround/rentArroundMenu.png",
+      "/projects/rentaround/rentArroundSplash.png",
+    ],
   },
 ];
 
@@ -89,9 +93,9 @@ const Projects = () => {
     <section
       id="projects"
       className="relative overflow-hidden px-6 py-24 text-white md:px-10 md:py-32
-      bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.07),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.06),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(34,211,238,0.05),transparent_45%),linear-gradient(135deg,#17151f,#151721,#131722)]"    >
+      bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.07),transparent_40%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.06),transparent_40%),radial-gradient(circle_at_50%_90%,rgba(34,211,238,0.05),transparent_45%),linear-gradient(135deg,#17151f,#151721,#131722)]"
+    >
       <div className="relative mx-auto max-w-7xl">
-        {/* Heading */}
         <div className="mb-16 max-w-3xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.35em] text-cyan-300">
             Selected Work
@@ -111,16 +115,22 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Project Grid */}
         <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-6">
-          {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className={index < 3 ? "lg:col-span-2" : "lg:col-span-3"}
-            >
+          {/* Top row - 3 equal cards */}
+          {projects.slice(0, 3).map((project) => (
+            <div key={project.title} className="lg:col-span-2">
               <ProjectCard project={project} />
             </div>
           ))}
+
+          {/* Bottom row - 2 equal centered cards */}
+          <div className="lg:col-span-2 lg:col-start-2">
+            <ProjectCard project={projects[3]} />
+          </div>
+
+          <div className="lg:col-span-2">
+            <ProjectCard project={projects[4]} />
+          </div>
         </div>
       </div>
     </section>
@@ -131,18 +141,14 @@ type Project = (typeof projects)[number];
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <article className="group relative flex min-h-[570px] flex-col overflow-hidden rounded-[2rem] border border-white/[0.08] bg-zinc-950 transition-all duration-500 hover:-translate-y-2 hover:border-white/[0.16] hover:shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
-      {/* Project Image Area */}
+    <article className="group relative flex h-[662px] flex-col overflow-hidden rounded-[2rem] border border-white/[0.08] bg-zinc-950 transition-all duration-500 hover:-translate-y-2 hover:border-white/[0.16] hover:shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
       <div
-        className={`relative h-[290px] overflow-hidden bg-gradient-to-br ${project.gradient}`}
+        className={`relative h-[290px] shrink-0 overflow-hidden bg-gradient-to-br ${project.gradient}`}
       >
-        {/* Ambient glow */}
         <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-500/15 blur-[90px]" />
 
-        {/* Grid texture */}
         <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:35px_35px]" />
 
-        {/* Top badges */}
         <div className="absolute left-6 top-6 z-30 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/50 backdrop-blur-xl">
           <FontAwesomeIcon
             icon={project.icon}
@@ -154,30 +160,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.type}
         </span>
 
-        {/* Screenshots */}
-        {project.images.length > 0 ? (
-          <ProjectVisual images={project.images} title={project.title} />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] px-8 py-10 text-center backdrop-blur-xl">
-              <FontAwesomeIcon
-                icon={faMobileScreenButton}
-                className="mb-4 h-8 w-8 text-blue-300"
-              />
-              <p className="text-sm text-gray-400">
-                Project preview coming soon
-              </p>
-            </div>
-          </div>
-        )}
+        <ProjectVisual images={project.images} title={project.title} />
 
-        {/* Bottom fade */}
         <div className="absolute inset-x-0 bottom-0 z-20 h-20 bg-gradient-to-t from-zinc-950 to-transparent" />
       </div>
 
-      {/* Content */}
-      <div className="flex flex-1 flex-col p-7 md:p-8">
-        <h3 className="text-2xl font-semibold tracking-tight md:text-3xl">
+      <div className="flex min-h-0 flex-1 flex-col p-7 md:p-8">
+        <h3 className="shrink-0 text-2xl font-semibold tracking-tight md:text-3xl">
           {project.title}
         </h3>
 
@@ -185,8 +174,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {project.description}
         </p>
 
-        {/* Technologies */}
-        <div className="mt-7 flex flex-wrap gap-2">
+        <div className="mt-7 flex shrink-0 flex-wrap gap-2">
           {project.technologies.map((technology) => (
             <span
               key={technology}
@@ -197,7 +185,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
           ))}
         </div>
 
-        {/* GitHub */}
         {project.github && (
           <div className="mt-auto pt-8">
             <a
@@ -227,6 +214,46 @@ const ProjectVisual = ({
   images: string[];
   title: string;
 }) => {
+  if (title === "Rentaround") {
+    return (
+      <div className="absolute inset-x-5 bottom-1 top-14">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/15 blur-[80px]" />
+
+        <div className="absolute left-3 top-8 h-64 w-[43%] -rotate-[7deg] overflow-hidden rounded-[1.5rem] border border-white/15 bg-black shadow-2xl transition-all duration-700 group-hover:-translate-x-2 group-hover:-rotate-[9deg]">
+          <Image
+            src={images[2]}
+            alt={`${title} splash screenshot`}
+            fill
+            className="object-cover object-top"
+            sizes="220px"
+          />
+        </div>
+
+        <div className="absolute left-1/2 top-0 z-10 h-72 w-[48%] -translate-x-1/2 rotate-1 overflow-hidden rounded-[1.5rem] border border-white/25 bg-black shadow-[0_25px_60px_rgba(0,0,0,0.6)] transition-transform duration-700 group-hover:-translate-x-1/2 group-hover:-rotate-1">
+          <Image
+            src={images[0]}
+            alt={`${title} home screenshot`}
+            fill
+            className="object-cover object-top"
+            sizes="250px"
+          />
+        </div>
+
+        <div className="absolute right-3 top-10 z-20 h-64 w-[43%] rotate-[7deg] overflow-hidden rounded-[1.5rem] border border-white/20 bg-black shadow-2xl transition-all duration-700 group-hover:translate-x-2 group-hover:rotate-[9deg]">
+          <Image
+            src={images[1]}
+            alt={`${title} menu screenshot`}
+            fill
+            className="object-cover object-top"
+            sizes="220px"
+          />
+        </div>
+
+        <div className="pointer-events-none absolute inset-0 z-30 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 transition duration-700 group-hover:opacity-100" />
+      </div>
+    );
+  }
+
   if (images.length === 2) {
     return (
       <div className="absolute inset-x-5 bottom-2 top-16">
@@ -255,7 +282,6 @@ const ProjectVisual = ({
 
   return (
     <div className="absolute inset-x-5 bottom-1 top-14">
-      {/* Back screenshot */}
       {images[1] && (
         <div className="absolute left-2 top-8 h-48 w-[47%] -rotate-8 overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl transition-all duration-700 group-hover:-translate-x-2 group-hover:-rotate-10">
           <Image
@@ -268,7 +294,6 @@ const ProjectVisual = ({
         </div>
       )}
 
-      {/* Main screenshot */}
       <div className="absolute left-1/2 top-1 h-56 w-[55%] -translate-x-1/2 rotate-1 overflow-hidden rounded-2xl border border-white/25 bg-black shadow-[0_25px_60px_rgba(0,0,0,0.55)] transition-transform duration-700 group-hover:-translate-x-1/2 group-hover:-rotate-1">
         <Image
           src={images[0]}
@@ -279,7 +304,6 @@ const ProjectVisual = ({
         />
       </div>
 
-      {/* Front screenshot */}
       {images[2] && (
         <div className="absolute right-0 top-12 h-48 w-[43%] rotate-8 overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl transition-all duration-700 group-hover:translate-x-2 group-hover:rotate-10">
           <Image
@@ -292,7 +316,6 @@ const ProjectVisual = ({
         </div>
       )}
 
-      {/* Small shine */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 transition duration-700 group-hover:opacity-100" />
     </div>
   );
