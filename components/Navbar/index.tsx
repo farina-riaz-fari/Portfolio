@@ -67,8 +67,11 @@ const Navbar = () => {
       <div className="pointer-events-none absolute left-1/2 top-0 h-24 w-96 -translate-x-1/2 rounded-full bg-purple-600/[0.06] blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl">
+        {/* Multi-color navbar glow */}
+        <div className="pointer-events-none absolute -inset-1 rounded-[18px] bg-gradient-to-r from-purple-500/30 via-blue-500/20 to-cyan-400/30 blur-xl" />
+
         {/* Main navbar */}
-        <div className="rounded-2xl border border-white/[0.08] bg-black/70 px-4 shadow-2xl shadow-black/20 backdrop-blur-xl md:px-5">
+        <div className="relative rounded-2xl border border-white/[0.08] bg-black/70 px-4 shadow-2xl shadow-black/20 backdrop-blur-xl md:px-5">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <a
