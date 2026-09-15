@@ -11,6 +11,7 @@ import {
   faGithub,
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
+import ContactDetails from "./ContactDetails";
 
 const Contact = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,8 +53,7 @@ const Contact = () => {
 
         <div className="absolute bottom-[5%] right-[8%] h-72 w-72 rounded-full bg-cyan-500/[0.04] blur-[110px]" />
 
-        {/* CENTRAL ORB */}
-
+        {/* Central orb */}
         <div className="absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-400/[0.07]">
           <div className="absolute inset-8 rounded-full border border-blue-400/[0.06]" />
 
@@ -62,7 +62,7 @@ const Contact = () => {
           <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-purple-500/[0.08] via-blue-500/[0.06] to-cyan-400/[0.08] blur-sm" />
         </div>
 
-        {/* DECORATIVE CONTACT ICONS */}
+        {/* Decorative contact icons */}
 
         {/* Email */}
         <div className="absolute left-[7%] top-[18%] rotate-[-12deg] text-[7rem] text-purple-400/[0.035] md:left-[10%] md:text-[10rem]">
@@ -84,8 +84,7 @@ const Contact = () => {
           <FontAwesomeIcon icon={faLinkedinIn} />
         </div>
 
-        {/* SMALL FLOATING LIGHTS */}
-
+        {/* Small floating lights */}
         <div className="absolute left-[25%] top-[22%] h-1.5 w-1.5 rounded-full bg-purple-400/40 shadow-[0_0_20px_rgba(168,85,247,0.5)]" />
 
         <div className="absolute right-[28%] top-[24%] h-1 w-1 rounded-full bg-cyan-400/50 shadow-[0_0_18px_rgba(34,211,238,0.5)]" />
@@ -156,65 +155,7 @@ const Contact = () => {
         <div className="my-16 h-px bg-gradient-to-r from-purple-500/30 via-blue-500/20 to-cyan-500/10" />
 
         {/* Contact details */}
-        <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
-          {/* Email + Phone */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
-            <a
-              href="mailto:farinariaz573@gmail.com"
-              className="group flex items-center gap-3 text-sm text-gray-500 transition duration-300 hover:text-white"
-            >
-              <FontAwesomeIcon
-                icon={faEnvelope}
-                className="text-purple-400/70 transition group-hover:text-purple-300"
-              />
-
-              farinariaz573@gmail.com
-            </a>
-
-            <span className="hidden h-4 w-px bg-white/10 sm:block" />
-
-            <a
-              href="tel:+923036740104"
-              className="group flex items-center gap-3 text-sm text-gray-500 transition duration-300 hover:text-white"
-            >
-              <FontAwesomeIcon
-                icon={faPhone}
-                className="text-cyan-400/70 transition group-hover:text-cyan-300"
-              />
-
-              +92 303 6740104
-            </a>
-          </div>
-
-          {/* Social links */}
-          <div className="flex items-center gap-3">
-            <a
-              href="https://github.com/farina-riaz-fari"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-full border border-white/10 bg-white/[0.02] px-5 py-2.5 text-sm text-gray-500 transition duration-300 hover:-translate-y-1 hover:border-purple-400/30 hover:bg-purple-500/[0.08] hover:text-purple-300"
-            >
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="mr-2 transition-transform duration-300 group-hover:scale-110"
-              />
-              GitHub
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/farina-riaz-867066240/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group rounded-full border border-white/10 bg-white/[0.02] px-5 py-2.5 text-sm text-gray-500 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-cyan-500/[0.08] hover:text-cyan-300"
-            >
-              <FontAwesomeIcon
-                icon={faLinkedinIn}
-                className="mr-2 transition-transform duration-300 group-hover:scale-110"
-              />
-              LinkedIn
-            </a>
-          </div>
-        </div>
+        <ContactDetails />
 
         {/* Bottom signature */}
         <div className="mt-16 flex items-center gap-4">
