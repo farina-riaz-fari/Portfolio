@@ -56,9 +56,23 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleNavClick = (sectionId: string) => {
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    event.preventDefault();
+
     setActiveSection(sectionId);
     setIsMenuOpen(false);
+
+    const section = document.getElementById(sectionId);
+
+    if (!section) return;
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   return (
@@ -76,7 +90,7 @@ const Navbar = () => {
             {/* Logo */}
             <a
               href="#home"
-              onClick={() => handleNavClick("home")}
+              onClick={(event) => handleNavClick(event, "home")}
               className="group flex items-center gap-2"
             >
               <span className="text-lg font-semibold tracking-tight text-white">
@@ -96,7 +110,9 @@ const Navbar = () => {
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={() => handleNavClick(sectionId)}
+                    onClick={(event) =>
+                      handleNavClick(event, sectionId)
+                    }
                     className={`group relative flex items-center gap-2 rounded-full px-3 py-2 text-sm transition duration-300 ${
                       isActive
                         ? "bg-white/[0.06] text-white"
@@ -135,7 +151,7 @@ const Navbar = () => {
             {/* Desktop CTA */}
             <a
               href="#contact"
-              onClick={() => handleNavClick("contact")}
+              onClick={(event) => handleNavClick(event, "contact")}
               className={`group hidden items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 md:flex ${
                 activeSection === "contact"
                   ? "border-purple-400/40 bg-purple-500/[0.15] text-purple-100"
@@ -181,7 +197,9 @@ const Navbar = () => {
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={() => handleNavClick(sectionId)}
+                    onClick={(event) =>
+                      handleNavClick(event, sectionId)
+                    }
                     className={`group flex items-center justify-between rounded-xl px-4 py-3 text-sm transition duration-300 ${
                       isActive
                         ? "bg-white/[0.06] text-white"
@@ -215,7 +233,7 @@ const Navbar = () => {
               {/* Mobile CTA */}
               <a
                 href="#contact"
-                onClick={() => handleNavClick("contact")}
+                onClick={(event) => handleNavClick(event, "contact")}
                 className={`mt-2 flex items-center justify-center gap-2 rounded-xl border px-4 py-3 text-sm font-medium transition duration-300 ${
                   activeSection === "contact"
                     ? "border-purple-400/40 bg-purple-500/[0.15] text-purple-100"
