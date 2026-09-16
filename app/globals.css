@@ -64,3 +64,32 @@
 .hero-image > div:last-child {
   animation: hero-float-slow 7s ease-in-out infinite;
 }
+
+
+/* Navbar section focus animation */
+
+@keyframes sectionFocus {
+  0% {
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  35% {
+    filter: blur(0.6px);
+    transform: scale(0.985);
+  }
+
+  65% {
+    filter: blur(0);
+    transform: scale(1.005);
+  }
+
+  100% {
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+.section-focus {
+  animation: sectionFocus 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -57,23 +57,36 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
-    sectionId: string
-  ) => {
-    event.preventDefault();
+  event: React.MouseEvent<HTMLAnchorElement>,
+  sectionId: string
+) => {
+  event.preventDefault();
 
-    setActiveSection(sectionId);
-    setIsMenuOpen(false);
+  setActiveSection(sectionId);
+  setIsMenuOpen(false);
 
-    const section = document.getElementById(sectionId);
+  const section = document.getElementById(sectionId);
 
-    if (!section) return;
+  if (!section) return;
 
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
+  section.classList.remove("section-focus");
+
+  // Restart the animation if the same section is clicked again
+  void section.offsetWidth;
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+
+  window.setTimeout(() => {
+    section.classList.add("section-focus");
+
+    window.setTimeout(() => {
+      section.classList.remove("section-focus");
+    }, 850);
+  }, 250);
+};
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 md:px-6">
