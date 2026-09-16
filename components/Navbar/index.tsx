@@ -57,36 +57,36 @@ const Navbar = () => {
   }, []);
 
   const handleNavClick = (
-  event: React.MouseEvent<HTMLAnchorElement>,
-  sectionId: string
-) => {
-  event.preventDefault();
+    event: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    event.preventDefault();
 
-  setActiveSection(sectionId);
-  setIsMenuOpen(false);
+    setActiveSection(sectionId);
+    setIsMenuOpen(false);
 
-  const section = document.getElementById(sectionId);
+    const section = document.getElementById(sectionId);
 
-  if (!section) return;
+    if (!section) return;
 
-  section.classList.remove("section-focus");
+    section.classList.remove("section-focus");
 
-  // Restart the animation if the same section is clicked again
-  void section.offsetWidth;
+    // Restart the animation if the same section is clicked again
+    void section.offsetWidth;
 
-  section.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-
-  window.setTimeout(() => {
-    section.classList.add("section-focus");
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
 
     window.setTimeout(() => {
-      section.classList.remove("section-focus");
-    }, 850);
-  }, 250);
-};
+      section.classList.add("section-focus");
+
+      window.setTimeout(() => {
+        section.classList.remove("section-focus");
+      }, 850);
+    }, 250);
+  };
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 md:px-6">
@@ -98,23 +98,23 @@ const Navbar = () => {
         <div className="pointer-events-none absolute -inset-1 rounded-[18px] bg-gradient-to-r from-purple-500/30 via-blue-500/20 to-cyan-400/30 blur-xl" />
 
         {/* Main navbar */}
-        <div className="relative rounded-2xl border border-white/[0.08] bg-black/70 px-4 shadow-2xl shadow-black/20 backdrop-blur-xl md:px-5">
+        <div className="relative rounded-2xl border border-white/[0.08] bg-black/70 px-3 shadow-2xl shadow-black/20 backdrop-blur-xl md:px-4 lg:px-5">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <a
               href="#home"
               onClick={(event) => handleNavClick(event, "home")}
-              className="group flex items-center gap-2"
+              className="group flex shrink-0 items-center gap-2"
             >
-              <span className="text-lg font-semibold tracking-tight text-white">
+              <span className="text-base font-semibold tracking-tight text-white md:text-[17px] lg:text-lg">
                 Farina Riaz
               </span>
 
-              <span className="h-2 w-2 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400 shadow-[0_0_12px_rgba(168,85,247,0.5)] transition duration-300 group-hover:scale-125" />
+              <span className="h-2 w-2 shrink-0 rounded-full bg-gradient-to-r from-purple-400 to-cyan-400 shadow-[0_0_12px_rgba(168,85,247,0.5)] transition duration-300 group-hover:scale-125" />
             </a>
 
             {/* Desktop Navigation */}
-            <div className="hidden items-center gap-1 md:flex">
+            <div className="hidden items-center gap-0.5 md:flex lg:gap-1">
               {navItems.map((item) => {
                 const sectionId = item.href.replace("#", "");
                 const isActive = activeSection === sectionId;
@@ -126,7 +126,7 @@ const Navbar = () => {
                     onClick={(event) =>
                       handleNavClick(event, sectionId)
                     }
-                    className={`group relative flex items-center gap-2 rounded-full px-3 py-2 text-sm transition duration-300 ${
+                    className={`group relative flex items-center gap-1.5 rounded-full px-2 py-2 text-xs transition duration-300 md:px-2.5 lg:gap-2 lg:px-3 lg:text-sm ${
                       isActive
                         ? "bg-white/[0.06] text-white"
                         : "text-gray-500 hover:bg-white/[0.04] hover:text-white"
@@ -134,7 +134,7 @@ const Navbar = () => {
                   >
                     <FontAwesomeIcon
                       icon={item.icon}
-                      className={`text-[11px] transition duration-300 ${
+                      className={`text-[10px] transition duration-300 lg:text-[11px] ${
                         isActive
                           ? "text-purple-300"
                           : "text-gray-600 group-hover:text-purple-300"
@@ -165,7 +165,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={(event) => handleNavClick(event, "contact")}
-              className={`group hidden items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 md:flex ${
+              className={`group hidden shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-2 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5 md:flex lg:gap-2 lg:px-4 lg:text-sm ${
                 activeSection === "contact"
                   ? "border-purple-400/40 bg-purple-500/[0.15] text-purple-100"
                   : "border-purple-400/20 bg-purple-500/[0.08] text-purple-200 hover:border-purple-400/40 hover:bg-purple-500/[0.15]"
@@ -175,7 +175,7 @@ const Navbar = () => {
 
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
-                className="text-xs text-purple-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                className="text-[10px] text-purple-400 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 lg:text-xs"
               />
             </a>
 
