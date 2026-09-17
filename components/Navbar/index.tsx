@@ -171,7 +171,9 @@ const Navbar = () => {
                   : "border-purple-400/20 bg-purple-500/[0.08] text-purple-200 hover:border-purple-400/40 hover:bg-purple-500/[0.15]"
               }`}
             >
-              <span>Let&apos;s Talk</span>
+              <span className="whitespace-nowrap">
+                Let&apos;s Talk
+              </span>
 
               <FontAwesomeIcon
                 icon={faArrowUpRightFromSquare}
