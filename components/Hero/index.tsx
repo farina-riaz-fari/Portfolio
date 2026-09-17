@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-zinc-950 px-6 pt-24 text-white md:px-10"
+      className="relative flex min-h-screen items-center overflow-hidden bg-zinc-950 px-6 py-24 text-white md:px-10 lg:py-0"
     >
       {/* BACKGROUND DIAMONDS */}
 
@@ -25,7 +25,6 @@ const Hero = () => {
       <div className="pointer-events-none absolute bottom-10 right-10 z-0 h-76 w-76 rotate-45 border border-cyan-400/15" />
 
       {/* MAIN CONTENT */}
-
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <HeroContent />
         <HeroImage />
