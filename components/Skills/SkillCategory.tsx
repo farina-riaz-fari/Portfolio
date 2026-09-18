@@ -44,7 +44,7 @@ const SkillCategory = ({
       </div>
 
       {/* Skill group card */}
-      <div className="group rounded-2xl border border-white/[0.07] bg-white/[0.025] p-5 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-purple-400/20 hover:bg-white/[0.035] hover:shadow-[0_15px_50px_rgba(168,85,247,0.07)] sm:p-6">
+      <div className="group rounded-2xl border border-white/[0.07] bg-white/[0.025] p-5 transition-all duration-500 hover:-translate-y-1 hover:border-purple-400/20 hover:bg-white/[0.035] hover:shadow-[0_15px_50px_rgba(168,85,247,0.07)] sm:p-6">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
           {/* Group information */}
           <div className="max-w-md">

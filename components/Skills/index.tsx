@@ -37,7 +37,7 @@ const Skills = () => {
       className="relative overflow-hidden bg-black py-24 sm:py-28 lg:py-32"
     >
       {/* Tech Network Background */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Very soft ambient glows */}
         <div className="absolute -left-40 top-10 h-80 w-80 rounded-full bg-purple-600/[0.055] blur-[140px]" />
 
