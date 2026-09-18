@@ -34,6 +34,16 @@ const Navbar = () => {
 
     if (!sections.length) return;
 
+    const updateActiveSectionFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+
+      if (hash && sections.some((section) => section.id === hash)) {
+        setActiveSection(hash);
+      }
+    };
+
+    updateActiveSectionFromHash();
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleSections = entries
@@ -53,7 +63,15 @@ const Navbar = () => {
 
     sections.forEach((section) => observer.observe(section));
 
-    return () => observer.disconnect();
+    window.addEventListener("hashchange", updateActiveSectionFromHash);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener(
+        "hashchange",
+        updateActiveSectionFromHash
+      );
+    };
   }, []);
 
   const handleNavClick = (
@@ -69,9 +87,11 @@ const Navbar = () => {
 
     if (!section) return;
 
+    window.history.pushState(null, "", `#${sectionId}`);
+
     section.classList.remove("section-focus");
 
-    // Restart the animation if the same section is clicked again
+    // Restart the animation if the same section is clicked again.
     void section.offsetWidth;
 
     section.scrollIntoView({
