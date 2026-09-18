@@ -66,7 +66,7 @@ const About = () => {
           </h2>
         </div>
 
-        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+        <div className="grid gap-12 min-[850px]:grid-cols-[1.15fr_0.85fr] min-[769px]:gap-20">
           {/* Left content */}
           <div>
             <p className="text-lg leading-8 text-gray-400 md:text-xl">
