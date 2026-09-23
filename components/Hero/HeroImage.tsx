@@ -10,6 +10,61 @@ const HeroImage = () => {
   return (
     <div className="relative flex w-full min-w-0 justify-center overflow-visible">
       <div className="hero-image-wrapper">
+
+        {/* React & TypeScript */}
+        <div
+          className="
+            hero-react-tag
+            absolute
+            -left-5
+            top-20
+            z-20
+            flex
+            items-center
+            gap-2.5
+            rounded-xl
+            border
+            border-purple-400/45
+            bg-black/70
+            px-3
+            py-2.5
+            shadow-[0_0_12px_rgba(168,85,247,0.25),inset_0_0_12px_rgba(168,85,247,0.06)]
+            backdrop-blur-lg
+          "
+        >
+          <div
+            className="
+              flex
+              h-8
+              w-8
+              shrink-0
+              items-center
+              justify-center
+              rounded-lg
+              border
+              border-purple-400/20
+              bg-purple-500/15
+              text-purple-300
+              shadow-[0_0_10px_rgba(168,85,247,0.2)]
+            "
+          >
+            <FontAwesomeIcon
+              icon={faCode}
+              className="h-3.5 w-3.5"
+            />
+          </div>
+
+          <div className="whitespace-nowrap">
+            <p className="text-[10px] text-gray-400">
+              Specialized in
+            </p>
+
+            <p className="text-xs font-medium text-white">
+              React & TypeScript
+            </p>
+          </div>
+        </div>
+
         <div className="hero-image-scale relative h-[580px] w-[490px]">
           {/* Ambient Glow */}
           <div
@@ -185,59 +240,6 @@ const HeroImage = () => {
               filter="drop-shadow(0 0 8px rgba(168,85,247,0.5))"
             />
           </svg>
-
-          {/* React & TypeScript */}
-          <div
-            className="
-              absolute
-              -left-5
-              top-16
-              z-20
-              flex
-              items-center
-              gap-2.5
-              rounded-xl
-              border
-              border-purple-400/45
-              bg-black/70
-              px-3
-              py-2.5
-              shadow-[0_0_12px_rgba(168,85,247,0.25),inset_0_0_12px_rgba(168,85,247,0.06)]
-              backdrop-blur-lg
-            "
-          >
-            <div
-              className="
-                flex
-                h-8
-                w-8
-                shrink-0
-                items-center
-                justify-center
-                rounded-lg
-                border
-                border-purple-400/20
-                bg-purple-500/15
-                text-purple-300
-                shadow-[0_0_10px_rgba(168,85,247,0.2)]
-              "
-            >
-              <FontAwesomeIcon
-                icon={faCode}
-                className="h-3.5 w-3.5"
-              />
-            </div>
-
-            <div className="whitespace-nowrap">
-              <p className="text-[10px] text-gray-400">
-                Specialized in
-              </p>
-
-              <p className="text-xs font-medium text-white">
-                React & TypeScript
-              </p>
-            </div>
-          </div>
 
           {/* Web & Mobile */}
           <div

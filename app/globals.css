@@ -120,6 +120,54 @@
 }
 
 /* ========================================= */
+/* HERO REACT TAG - TABLET                   */
+/* ========================================= */
+
+@media (max-width: 1023px) and (min-width: 481px) {
+  .hero-react-tag {
+    left: 180px;
+    top: 80px;
+  }
+}
+
+@media (max-width: 910px) and (min-width: 481px) {
+  .hero-react-tag {
+    left: 120px;
+    top: 80px;
+  }
+}
+
+@media (max-width: 780px) and (min-width: 481px) {
+  .hero-react-tag {
+    left: 80px;
+    top: 80px;
+  }
+}
+
+@media (max-width: 660px) and (min-width: 481px) {
+  .hero-react-tag {
+    left: 40px;
+    top: 80px;
+  }
+}
+
+@media (max-width: 580px) and (min-width: 481px) {
+  .hero-react-tag {
+    left: 10px;
+    top: 80px;
+  }
+}
+/* ========================================= */
+/* HERO WEB & MOBILE TAG                     */
+/* ========================================= */
+
+@media (max-width: 1150px) {
+  .hero-image-scale > div:last-child {
+    right: 10px;
+  }
+}
+
+/* ========================================= */
 /* BELOW 480px                                */
 /* ========================================= */
 
@@ -133,6 +181,13 @@
   .hero-image-scale {
     transform: scale(0.9);
     transform-origin: top right;
+  }
+
+  .hero-react-tag {
+    left: -5px;
+    top: 45px;
+    transform: scale(0.9);
+    transform-origin: top left;
   }
 }
 
@@ -164,6 +219,13 @@
     transform: scale(0.8);
     transform-origin: top right;
   }
+
+  .hero-react-tag {
+    left: -10px;
+    top: 32px;
+    transform: scale(0.8);
+    transform-origin: top left;
+  }
 }
 
 /* ========================================= */
@@ -178,6 +240,13 @@
   .hero-image-scale {
     transform: scale(0.75);
     transform-origin: top right;
+  }
+
+  .hero-react-tag {
+    left: -15px;
+    top: 20px;
+    transform: scale(0.75);
+    transform-origin: top left;
   }
 }
 
@@ -194,6 +263,13 @@
     transform: scale(0.7);
     transform-origin: top right;
   }
+
+  .hero-react-tag {
+    left: -20px;
+    top: 10px;
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
 }
 
 /* ========================================= */
@@ -208,5 +284,12 @@
   .hero-image-scale {
     transform: scale(0.65);
     transform-origin: top right;
+  }
+
+  .hero-react-tag {
+    left: -25px;
+    top: 0;
+    transform: scale(0.65);
+    transform-origin: top left;
   }
 }

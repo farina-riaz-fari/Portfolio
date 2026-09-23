@@ -110,7 +110,7 @@ const Skills = () => {
         {/* Skills Timeline */}
         <div className="relative mt-16">
           {/* Timeline */}
-          <div className="absolute left-[17px] top-0 hidden h-full w-px bg-gradient-to-b from-purple-500/50 via-purple-500/15 to-transparent sm:block" />
+          <div className="absolute left-[17px] top-0 hidden h-[calc(100%+12px)] w-px bg-gradient-to-b from-purple-500/50 via-purple-500/15 to-transparent sm:block" />
 
           <div className="space-y-10 sm:space-y-12">
             {skillGroups.map((group, index) => (
