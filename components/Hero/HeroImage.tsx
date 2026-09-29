@@ -4,153 +4,356 @@ import {
   faCode,
   faMobileScreenButton,
 } from "@fortawesome/free-solid-svg-icons";
+import profileImage from "@/src/assets/profileImage.png";
 
 const HeroImage = () => {
   return (
     <div className="relative flex min-w-0 justify-center lg:justify-end">
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute h-[350px] w-[350px] rounded-full bg-gradient-to-r from-purple-600/30 via-blue-500/20 to-cyan-400/20 blur-[80px] max-[364px]:h-[300px] max-[364px]:w-[300px]" />
+      <div
+        className="
+          relative
+          h-[580px]
+          w-[490px]
+          max-[639px]:h-[500px]
+          max-[639px]:w-[380px]
+        "
+      >
+        {/* ================================================= */}
+        {/* AMBIENT GLOW                                      */}
+        {/* ================================================= */}
 
-      <div className="hero-image relative">
-        {/* Gradient Border */}
-        <div className="pointer-events-none absolute -inset-[2px] rounded-[2rem] bg-gradient-to-br from-purple-500 via-blue-500 to-cyan-400 opacity-70" />
-
-        {/* Profile Image */}
         <div
           className="
-            relative
-            h-[335px] w-[275px]
-            overflow-hidden
-            rounded-[2rem]
-            border border-white/10
-            bg-gray-900
+            pointer-events-none
+            absolute
+            right-[2px]
+            top-1/2
+            h-[445px]
+            w-[445px]
+            -translate-y-1/2
+            rounded-full
+            bg-purple-600/20
+            blur-[120px]
+            max-[639px]:h-[350px]
+            max-[639px]:w-[350px]
+          "
+        />
 
-            min-[365px]:h-[390px]
-            min-[365px]:w-[320px]
+        {/* ================================================= */}
+        {/* CIRCLE BACKGROUND GLOW                            */}
+        {/* ================================================= */}
 
-            md:h-[450px]
-            md:w-[370px]
+        <div
+          className="
+            pointer-events-none
+            absolute
+            right-[20px]
+            top-1/2
+            z-[1]
+            h-[405px]
+            w-[405px]
+            -translate-y-1/2
+            rounded-full
+            bg-gradient-to-br
+            from-purple-500/45
+            via-blue-500/25
+            to-cyan-400/40
+            blur-[4px]
+            shadow-[0_0_50px_rgba(168,85,247,0.45),0_0_100px_rgba(34,211,238,0.2)]
+            max-[639px]:right-[2px]
+            max-[639px]:h-[320px]
+            max-[639px]:w-[320px]
+          "
+        />
+
+        {/* ================================================= */}
+        {/* OUTER CYAN CIRCLE                                */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            right-[8px]
+            top-1/2
+            z-[2]
+            h-[415px]
+            w-[415px]
+            -translate-y-1/2
+            rounded-full
+            border
+            border-cyan-300/30
+            opacity-90
+            blur-[1px]
+            shadow-[0_0_20px_rgba(34,211,238,0.35)]
+            max-[639px]:right-0
+            max-[639px]:h-[330px]
+            max-[639px]:w-[330px]
+          "
+        />
+
+        {/* ================================================= */}
+        {/* MIDDLE PURPLE CIRCLE                             */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            right-[20px]
+            top-1/2
+            z-[3]
+            h-[405px]
+            w-[405px]
+            -translate-y-1/2
+            rounded-full
+            border
+            border-purple-400/30
+            shadow-[0_0_28px_rgba(168,85,247,0.3)]
+            max-[639px]:right-[2px]
+            max-[639px]:h-[320px]
+            max-[639px]:w-[320px]
+          "
+        />
+
+        {/* ================================================= */}
+        {/* INNER CIRCLE                                      */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            right-[32px]
+            top-1/2
+            z-[4]
+            h-[382px]
+            w-[382px]
+            -translate-y-1/2
+            rounded-full
+            border
+            border-purple-300/15
+            max-[639px]:right-[13px]
+            max-[639px]:h-[300px]
+            max-[639px]:w-[300px]
+          "
+        />
+
+        {/* ================================================= */}
+        {/* PROFILE IMAGE                                     */}
+        {/* ================================================= */}
+
+        <div
+          className="
+            absolute
+            bottom-0
+            right-0
+            z-[10]
+            h-[600px]
+            w-[445px]
+            max-[639px]:right-[5px]
+            max-[639px]:h-[510px]
+            max-[639px]:w-[365px]
           "
         >
+          <svg
+            className="absolute h-0 w-0"
+            aria-hidden="true"
+          >
+            <defs>
+              <mask id="profile-circle-mask">
+                {/* Hide everything first */}
+                <rect
+                  x="0"
+                  y="0"
+                  width="445"
+                  height="600"
+                  fill="black"
+                />
+
+                {/* Upper/head area */}
+                <rect
+                  x="55"
+                  y="0"
+                  width="390"
+                  height="240"
+                  fill="white"
+                />
+
+                {/* Lower image clipping area */}
+                <circle
+                  cx="225"
+                  cy="305"
+                  r="195"
+                  fill="white"
+                />
+              </mask>
+            </defs>
+          </svg>
+
           <Image
-            src="/images/profile.png"
-            alt="Profile"
+            src={profileImage}
+            alt="Farina Riaz"
             fill
             priority
-            className="object-cover"
-            sizes="(max-width: 364px) 275px, (max-width: 768px) 320px, 370px"
+            sizes="(max-width: 639px) 365px, 445px"
+            className="object-contain object-bottom"
+            style={{
+              maskImage: "url(#profile-circle-mask)",
+              WebkitMaskImage: "url(#profile-circle-mask)",
+            }}
           />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         </div>
 
-        {/* React & TypeScript Tag */}
+        {/* ================================================= */}
+        {/* LOWER PURPLE NEON ARC — IN FRONT OF IMAGE         */}
+        {/* ================================================= */}
+
+        <svg
+          className="
+            pointer-events-none
+            absolute
+            right-[20px]
+            top-1/2
+            z-[11]
+            h-[405px]
+            w-[405px]
+            -translate-y-1/2
+            overflow-visible
+            max-[639px]:right-[2px]
+            max-[639px]:h-[320px]
+            max-[639px]:w-[320px]
+          "
+          viewBox="0 0 350 350"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M 20 175 A 155 155 0 0 0 330 175"
+            stroke="rgba(168,85,247,0.65)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            filter="drop-shadow(0 0 8px rgba(168,85,247,0.5))"
+          />
+        </svg>
+
+        {/* ================================================= */}
+        {/* REACT & TYPESCRIPT — NEON TAG                     */}
+        {/* ================================================= */}
+
         <div
           className="
-            absolute -left-8 top-12
-            flex items-center gap-3
-            rounded-2xl border border-white/10
-            bg-black/80 px-4 py-3
-            backdrop-blur-md
-
-            min-[640px]:max-[1369px]:left-0
-            min-[640px]:max-[1369px]:-translate-x-2
-
-            max-[639px]:-left-4
-            max-[639px]:top-8
-            max-[639px]:scale-[0.9]
-
-            max-[364px]:left-0
-            max-[364px]:top-6
+            absolute
+            -left-5
+            top-16
+            z-20
+            flex
+            items-center
+            gap-2.5
+            rounded-xl
+            border
+            border-purple-400/45
+            bg-black/70
+            px-3
+            py-2.5
+            shadow-[0_0_12px_rgba(168,85,247,0.25),inset_0_0_12px_rgba(168,85,247,0.06)]
+            backdrop-blur-lg
+            max-[639px]:left-0
+            max-[639px]:top-12
+            max-[639px]:scale-[0.88]
             max-[364px]:scale-[0.72]
             max-[364px]:origin-left
-            max-[364px]:gap-2
-            max-[364px]:px-3
-            max-[364px]:py-2
-
-            min-[1370px]:-left-8
           "
         >
           <div
             className="
-              flex h-9 w-9 shrink-0
-              items-center justify-center
-              rounded-xl
+              flex
+              h-8
+              w-8
+              shrink-0
+              items-center
+              justify-center
+              rounded-lg
+              border
+              border-purple-400/20
               bg-purple-500/15
               text-purple-300
-
-              max-[364px]:h-7
-              max-[364px]:w-7
+              shadow-[0_0_10px_rgba(168,85,247,0.2)]
             "
           >
             <FontAwesomeIcon
               icon={faCode}
-              className="h-4 w-4 max-[364px]:h-3 max-[364px]:w-3"
+              className="h-3.5 w-3.5"
             />
           </div>
 
           <div className="whitespace-nowrap">
-            <p className="text-xs text-gray-500 max-[364px]:text-[9px]">
+            <p className="text-[10px] text-gray-400">
               Specialized in
             </p>
 
-            <p className="text-sm font-medium text-white max-[364px]:text-[11px]">
+            <p className="text-xs font-medium text-white">
               React & TypeScript
             </p>
           </div>
         </div>
 
-        {/* Web & Mobile Tag */}
+        {/* ================================================= */}
+        {/* WEB & MOBILE — NEON TAG                           */}
+        {/* ================================================= */}
+
         <div
           className="
-            absolute -bottom-6 -right-6
-            flex items-center gap-3
-            rounded-2xl border border-white/10
-            bg-black/80 px-4 py-3
-            backdrop-blur-md
-
-            min-[640px]:max-[1369px]:right-2
-            min-[640px]:max-[1369px]:translate-x-0
-
-            max-[639px]:-right-4
-            max-[639px]:-bottom-4
-            max-[639px]:scale-[0.9]
-
-            max-[364px]:right-0
-            max-[364px]:bottom-0
+            absolute
+            -right-5
+            bottom-5
+            z-20
+            flex
+            items-center
+            gap-2.5
+            rounded-xl
+            border
+            border-cyan-400/45
+            bg-black/70
+            px-3
+            py-2.5
+            shadow-[0_0_12px_rgba(34,211,238,0.25),inset_0_0_12px_rgba(34,211,238,0.06)]
+            backdrop-blur-lg
+            max-[639px]:right-0
+            max-[639px]:bottom-4
+            max-[639px]:scale-[0.88]
             max-[364px]:scale-[0.72]
             max-[364px]:origin-right
-            max-[364px]:gap-2
-            max-[364px]:px-3
-            max-[364px]:py-2
-
-            min-[1370px]:-right-6
           "
         >
           <div
             className="
-              flex h-9 w-9 shrink-0
-              items-center justify-center
-              rounded-xl
-              bg-cyan-400/10
+              flex
+              h-8
+              w-8
+              shrink-0
+              items-center
+              justify-center
+              rounded-lg
+              border
+              border-cyan-400/20
+              bg-cyan-400/15
               text-cyan-300
-
-              max-[364px]:h-7
-              max-[364px]:w-7
+              shadow-[0_0_10px_rgba(34,211,238,0.2)]
             "
           >
             <FontAwesomeIcon
               icon={faMobileScreenButton}
-              className="h-4 w-4 max-[364px]:h-3 max-[364px]:w-3"
+              className="h-3.5 w-3.5"
             />
           </div>
 
           <div className="whitespace-nowrap">
-            <p className="text-xs text-gray-500 max-[364px]:text-[9px]">
+            <p className="text-[10px] text-gray-400">
               Building for
             </p>
 
-            <p className="text-sm font-medium text-white max-[364px]:text-[11px]">
+            <p className="text-xs font-medium text-white">
               Web & Mobile
             </p>
           </div>
