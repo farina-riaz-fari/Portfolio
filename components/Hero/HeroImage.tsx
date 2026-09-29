@@ -242,7 +242,7 @@ const HeroImage = () => {
           </svg>
 
           {/* Web & Mobile */}
-          <div
+          {/* <div
             className="
               absolute
               -right-5
@@ -292,7 +292,7 @@ const HeroImage = () => {
                 Web & Mobile
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
