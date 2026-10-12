@@ -4,7 +4,7 @@ import {
   faCode,
   faMobileScreenButton,
 } from "@fortawesome/free-solid-svg-icons";
-import profileImage from "@/src/assets/profileImage.png";
+import profileImage from "@/src/assets/profileImg.png";
 
 const HeroImage = () => {
   return (
